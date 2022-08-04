@@ -17,7 +17,7 @@ describe('Spread operator', () => {
     expect(min()).toBe(undefined);
   });
 
-  xit('copy can copy objects', () => {
+  it('copy can copy objects', () => {
     const example = { a: 1, b: 2 };
     const copiedExample = copy(example);
 
