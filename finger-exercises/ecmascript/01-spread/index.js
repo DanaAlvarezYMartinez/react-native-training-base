@@ -4,6 +4,8 @@ export function min(array) {
   let result;
   if (!isArray(array)) {
     result = array;
+  } else {
+    result = Math.min(...array);
   }
   return result;
 }
