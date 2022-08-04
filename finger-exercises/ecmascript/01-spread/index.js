@@ -8,6 +8,8 @@ export function copy(toCopy) {
   return isArray(toCopy) ? [...toCopy] : { ...toCopy };
 }
 
-export function reverseMerge() {}
+export function reverseMerge(arr1, arr2) {
+  return [...[arr2, arr1].flat()];
+}
 
 export function filterAttribs() {}
