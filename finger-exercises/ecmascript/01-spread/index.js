@@ -1,18 +1,5 @@
-import { isArray } from './utils';
-
-export function min(array) {
-  let result;
-  if (array) {
-    if (!isArray(array)) {
-      result = array;
-    } else {
-      result = Math.min(...array);
-    }
-  } else {
-    result = undefined;
-  }
-
-  return result;
+export function min(...array) {
+  return array.flat().length === 0 ? undefined : Math.min(...array.flat());
 }
 
 export function copy() {}
