@@ -6,4 +6,4 @@ export function isArray(aPossibleArray) {
   return aPossibleArray.constructor.name === 'Array';
 }
 
-// export default isArray;
+export default isArray;

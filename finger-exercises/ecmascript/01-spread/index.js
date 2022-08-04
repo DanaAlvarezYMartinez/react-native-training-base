@@ -1,8 +1,11 @@
 import { isArray } from './utils';
 
-export function min() {
-  isArray();
-  return Math.min();
+export function min(array) {
+  let result;
+  if (!isArray(array)) {
+    result = array;
+  }
+  return result;
 }
 
 export function copy() {}

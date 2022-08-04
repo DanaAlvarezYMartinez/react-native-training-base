@@ -1,7 +1,7 @@
 import { min, copy, reverseMerge, filterAttribs } from '.';
 
 describe('Spread operator', () => {
-  xit('min returns the param if is the only argument', () => {
+  it('min returns the param if is the only argument', () => {
     expect(min(1)).toBe(1);
     expect(min(2)).toBe(2);
   });
@@ -16,6 +16,7 @@ describe('Spread operator', () => {
   xit('min returns undefined on no args', () => {
     expect(min()).toBe(undefined);
   });
+
   xit('copy can copy objects', () => {
     const example = { a: 1, b: 2 };
     const copiedExample = copy(example);
@@ -27,7 +28,7 @@ describe('Spread operator', () => {
     expect(example).toEqual({ a: 1, b: 2, c: 3 });
     expect(copiedExample).toEqual({ a: 1, b: 2 });
   });
-  xit('copy can copy arrays', () => {
+  xit('copy can copy arrsays', () => {
     const example = [];
     const copiedExample = copy(example);
 
