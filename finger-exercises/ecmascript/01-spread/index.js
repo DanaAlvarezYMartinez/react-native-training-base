@@ -13,6 +13,5 @@ export function reverseMerge(arr1, arr2) {
 }
 
 export function filterAttribs(obj) {
-  
-  return {...obj};
+  return { ...obj };
 }
