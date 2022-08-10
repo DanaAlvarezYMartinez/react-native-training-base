@@ -19,7 +19,7 @@ const style = StyleSheet.create({
     },
     bookTitle:{
         fontSize:17,
-        color:'#4a4a4a',git
+        color:'#4a4a4a',
         fontWeight:'700',
     },
     bookAuthor:{
