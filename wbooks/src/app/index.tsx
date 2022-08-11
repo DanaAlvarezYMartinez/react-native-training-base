@@ -10,22 +10,23 @@
  */
 
 import React from 'react';
-import { SafeAreaView, StyleSheet, View, Text} from 'react-native';
-import Book from '@components/Book';
+import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
+import Book from '@app/components/Book';
 import { BOOKS_MOCK } from '@constants/mockBooks';
+import { white, black } from '@constants/colors';
+
 const book = BOOKS_MOCK[1];
 
 const App = () => {
   return (
     <>
       <SafeAreaView>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Book Component Test</Text>
-              <Book author={book.author} title={book.title} imageUrl={book.imageUrl}/>
-              <Book author={book.author} title={book.title} imageUrl={book.imageUrl}/>
-              <Book author={book.author} title={book.title} imageUrl={book.imageUrl}/>
-
-            </View>
+        <View style={styles.sectionContainer}>
+          <Text style={styles.sectionTitle}>Book Component Test</Text>
+          <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
+          <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
+          <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
+        </View>
       </SafeAreaView>
     </>
   );
@@ -35,14 +36,14 @@ const styles = StyleSheet.create({
   sectionContainer: {
     marginTop: 15,
     paddingHorizontal: 15,
-    backgroundColor: '#000',
-    height:'100%',
+    backgroundColor: black,
+    height: '100%'
   },
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
-    color: '#fff',
-    marginBottom:15,
+    color: white,
+    marginBottom: 15
   }
 });
 

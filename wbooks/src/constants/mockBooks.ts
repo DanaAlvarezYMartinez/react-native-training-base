@@ -17,7 +17,7 @@ export const BOOKS_MOCK = [
     genre: 'other',
     publisher: 'Pocket Books',
     year: '1989',
-    imageUrl: coverBook,
+    imageUrl: coverBook
   },
   {
     id: 2,
