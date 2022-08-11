@@ -10,15 +10,15 @@
  */
 
 import React from 'react';
-import { SafeAreaView} from 'react-native';
-import Library from './screens/Library';
+import { SafeAreaView } from 'react-native';
 
+import Library from './screens/Library';
 
 const App = () => {
   return (
     <>
       <SafeAreaView>
-            <Library/>
+        <Library />
       </SafeAreaView>
     </>
   );

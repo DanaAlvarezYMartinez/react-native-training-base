@@ -1,19 +1,15 @@
-import React from "react";
-import { View} from "react-native";
+import React from 'react';
+import { View } from 'react-native';
+import BookList from '@app/components/BookList';
+
 import style from './style';
-import BookList from "@app/components/BookList";
 
 const Library = () => {
-    return (
+  return (
     <View style={style.libraryContainer}>
-        <BookList />
-    </View>);
-
-    
-   
-
-    
-
+      <BookList />
+    </View>
+  );
 };
 
-export  default Library;
+export default Library;

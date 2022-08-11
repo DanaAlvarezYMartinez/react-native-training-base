@@ -1,14 +1,15 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
+import { aliceBlue } from '@constants/colors';
 
 const style = StyleSheet.create({
-    libraryContainer:{
-        display:'flex',
-        paddingVertical:15,
-        alignItems:'center',
-        paddingHorizontal: 15,
-        backgroundColor: '#EAF6FA',
-        height:'100%',
-    }
+  libraryContainer: {
+    display: 'flex',
+    paddingVertical: 15,
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    backgroundColor: aliceBlue,
+    height: '100%'
+  }
 });
 
 export default style;

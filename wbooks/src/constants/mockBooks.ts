@@ -12,7 +12,7 @@ export const BOOKS_MOCK = [
     genre: 'Short story',
     publisher: 'Butterworth-Heinemann',
     year: '1968',
-    imageUrl: cover1,
+    imageUrl: cover1
   },
   {
     id: 1,
@@ -21,7 +21,7 @@ export const BOOKS_MOCK = [
     genre: 'other',
     publisher: 'Pocket Books',
     year: '1989',
-    imageUrl: cover2,
+    imageUrl: cover2
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ export const BOOKS_MOCK = [
     genre: 'suspense',
     publisher: 'Little, Brown',
     year: '1985',
-    imageUrl: cover3,
+    imageUrl: cover3
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ export const BOOKS_MOCK = [
     genre: 'suspense',
     publisher: 'Pocket Books',
     year: '1989',
-    imageUrl: cover4,
+    imageUrl: cover4
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ export const BOOKS_MOCK = [
     genre: 'suspense',
     publisher: 'Pocket Books',
     year: '1989',
-    imageUrl: cover5,
+    imageUrl: cover5
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ export const BOOKS_MOCK = [
     genre: 'suspense',
     publisher: 'Riverhead Books',
     year: '2015',
-    imageUrl: cover1,
+    imageUrl: cover1
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ export const BOOKS_MOCK = [
     genre: 'suspense',
     publisher: 'Scribner',
     year: '2014',
-    imageUrl: cover2,
+    imageUrl: cover2
   },
   {
     id: 7,
@@ -75,8 +75,7 @@ export const BOOKS_MOCK = [
     genre: 'thriller',
     publisher: 'Ballantine Books',
     year: '2003',
-    imageUrl:
-    cover3,
+    imageUrl: cover3
   },
   {
     id: 8,
@@ -85,6 +84,6 @@ export const BOOKS_MOCK = [
     genre: 'fiction',
     publisher: 'Crown Publishing Group',
     year: '2011',
-    imageUrl: cover4,
+    imageUrl: cover4
   }
 ];
