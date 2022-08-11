@@ -1,4 +1,8 @@
-import coverBook from '@assets/coverBook.png';
+import cover1 from '@assets/cover1.png';
+import cover2 from '@assets/cover2.png';
+import cover3 from '@assets/cover3.png';
+import cover4 from '@assets/cover4.png';
+import cover5 from '@assets/cover5.png';
 
 export const BOOKS_MOCK = [
   {
@@ -8,7 +12,7 @@ export const BOOKS_MOCK = [
     genre: 'Short story',
     publisher: 'Butterworth-Heinemann',
     year: '1968',
-    imageUrl: coverBook,
+    imageUrl: cover1,
   },
   {
     id: 1,
@@ -17,7 +21,7 @@ export const BOOKS_MOCK = [
     genre: 'other',
     publisher: 'Pocket Books',
     year: '1989',
-    imageUrl: coverBook,
+    imageUrl: cover2,
   },
   {
     id: 2,
@@ -26,7 +30,7 @@ export const BOOKS_MOCK = [
     genre: 'suspense',
     publisher: 'Little, Brown',
     year: '1985',
-    imageUrl: coverBook,
+    imageUrl: cover3,
   },
   {
     id: 3,
@@ -35,7 +39,7 @@ export const BOOKS_MOCK = [
     genre: 'suspense',
     publisher: 'Pocket Books',
     year: '1989',
-    imageUrl: coverBook,
+    imageUrl: cover4,
   },
   {
     id: 4,
@@ -44,16 +48,16 @@ export const BOOKS_MOCK = [
     genre: 'suspense',
     publisher: 'Pocket Books',
     year: '1989',
-    imageUrl: coverBook,
+    imageUrl: cover5,
   },
   {
     id: 5,
     author: 'Paula Hawkins',
-    title: 'The Girl on the Train\n',
+    title: 'The Girl on the Train',
     genre: 'suspense',
     publisher: 'Riverhead Books',
     year: '2015',
-    imageUrl: coverBook,
+    imageUrl: cover1,
   },
   {
     id: 6,
@@ -62,7 +66,7 @@ export const BOOKS_MOCK = [
     genre: 'suspense',
     publisher: 'Scribner',
     year: '2014',
-    imageUrl: coverBook,
+    imageUrl: cover2,
   },
   {
     id: 7,
@@ -72,7 +76,7 @@ export const BOOKS_MOCK = [
     publisher: 'Ballantine Books',
     year: '2003',
     imageUrl:
-    coverBook,
+    cover3,
   },
   {
     id: 8,
@@ -81,6 +85,6 @@ export const BOOKS_MOCK = [
     genre: 'fiction',
     publisher: 'Crown Publishing Group',
     year: '2011',
-    imageUrl: coverBook,
+    imageUrl: cover4,
   }
 ];

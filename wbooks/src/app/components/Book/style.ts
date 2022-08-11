@@ -9,7 +9,6 @@ const style = StyleSheet.create({
         paddingVertical:15,
         paddingHorizontal:30,
         height:90,
-        alignItems:'center',
         marginVertical:5,
     },
     bookInfoContainer:{
