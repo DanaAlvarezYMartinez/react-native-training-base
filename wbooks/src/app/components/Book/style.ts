@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native';
 import { white, fontGray } from '@constants/colors';
 import { bookAuthorSize, bookAuthorWeight, bookTitleSize, bookTitleWeight } from '@constants/fonts';
-import { defaultSpace } from '@constants/constants';
+
+const defaultSpace = 15;
 
 const style = StyleSheet.create({
   bookContainer: {

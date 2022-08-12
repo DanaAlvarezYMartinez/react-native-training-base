@@ -10,11 +10,11 @@
  */
 
 import React from 'react';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import Book from '@app/components/Book';
 import { BOOKS_MOCK } from '@constants/mockBooks';
-import { black } from '@constants/colors';
-import { defaultSpace } from '@constants/constants';
+
+import style from './style';
 
 const book = BOOKS_MOCK[1];
 
@@ -22,7 +22,7 @@ const App = () => {
   return (
     <>
       <SafeAreaView>
-        <View style={styles.sectionContainer}>
+        <View style={style.sectionContainer}>
           <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
           <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
           <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
@@ -31,14 +31,5 @@ const App = () => {
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: defaultSpace,
-    paddingHorizontal: defaultSpace,
-    backgroundColor: black,
-    height: '100%'
-  }
-});
 
 export default App;
