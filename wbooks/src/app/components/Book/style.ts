@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { white, fontGray } from '@constants/colors';
 import { bookAuthorSize, bookAuthorWeight, bookTitleSize, bookTitleWeight } from '@constants/fonts';
 
-const defaultSpace = 15;
+const DEFAULT_SPACE = 15;
 
 const style = StyleSheet.create({
   bookContainer: {
@@ -10,8 +10,8 @@ const style = StyleSheet.create({
     backgroundColor: white,
     flexDirection: 'row',
     borderRadius: 8,
-    padding: defaultSpace,
-    paddingHorizontal: defaultSpace,
+    padding: DEFAULT_SPACE,
+    paddingHorizontal: DEFAULT_SPACE,
     height: 90,
     alignItems: 'center',
     marginVertical: 5
@@ -19,7 +19,7 @@ const style = StyleSheet.create({
   bookInfoContainer: {
     flex: 1,
     flexDirection: 'column',
-    marginLeft: defaultSpace
+    marginLeft: DEFAULT_SPACE
   },
   bookTitle: {
     fontSize: bookTitleSize,
