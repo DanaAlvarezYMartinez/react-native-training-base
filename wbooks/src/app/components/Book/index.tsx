@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ImageSourcePropType } from 'react-native';
 
 import style from './style';
 
 export interface Props {
   author: string;
   title: string;
-  imageUrl?: any;
+  imageUrl: ImageSourcePropType;
 }
 
 const Book: React.FC<Props> = ({ author, title, imageUrl }) => {
