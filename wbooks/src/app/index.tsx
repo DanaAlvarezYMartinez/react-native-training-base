@@ -10,16 +10,35 @@
  */
 
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Library from '@app/screens/Library';
+import BookDetail from '@app/screens/BookDetail';
 
-import Library from './screens/Library';
+export interface bookProps {
+  author: string;
+  title: string;
+  imageUrl?: any;
+  year: string;
+  genre: string;
+}
+
+export type RootStackParamList = {
+  Library: undefined;
+  BookDetail: any;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
     <>
-      <SafeAreaView>
-        <Library />
-      </SafeAreaView>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Library" component={Library} />
+          <Stack.Screen name="BookDetail" component={BookDetail} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 };

@@ -1,24 +1,28 @@
 import React from 'react';
-import { View, Text, Image, ImageSourcePropType } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList, bookProps } from '@app/index';
 
 import style from './style';
 
-export interface Props {
-  author: string;
-  title: string;
-  imageUrl: ImageSourcePropType;
-}
+type BookDetailProp = NativeStackNavigationProp<RootStackParamList, 'BookDetail'>;
 
-const Book: React.FC<Props> = ({ author, title, imageUrl }) => {
+const Book = ({ author, title, imageUrl, year, genre }: bookProps) => {
+  const navigation = useNavigation<BookDetailProp>();
+
+  const redirectNavigation = () =>
+    navigation.navigate('BookDetail', { author, title, imageUrl, year, genre });
+
   return (
-    <View style={style.bookContainer}>
+    <TouchableOpacity style={style.bookContainer} onPress={redirectNavigation}>
       <Image source={imageUrl} style={style.img} />
 
       <View style={style.bookInfoContainer}>
         <Text style={style.bookTitle}>{title}</Text>
         <Text style={style.bookAuthor}>{author}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
