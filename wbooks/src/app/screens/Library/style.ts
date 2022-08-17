@@ -1,12 +1,13 @@
 import { StyleSheet } from 'react-native';
 import { aliceBlue } from '@constants/colors';
 
+const DEFAULT_SPACE = 15;
+
 const style = StyleSheet.create({
   libraryContainer: {
     display: 'flex',
-    paddingVertical: 15,
+    padding: DEFAULT_SPACE,
     alignItems: 'center',
-    paddingHorizontal: 15,
     backgroundColor: aliceBlue,
     height: '100%'
   }
