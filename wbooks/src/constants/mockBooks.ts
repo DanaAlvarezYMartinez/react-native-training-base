@@ -1,3 +1,5 @@
+import coverBook from '@assets/coverBook.png';
+
 export const BOOKS_MOCK = [
   {
     id: 0,
@@ -15,7 +17,7 @@ export const BOOKS_MOCK = [
     genre: 'other',
     publisher: 'Pocket Books',
     year: '1989',
-    imageUrl: null
+    imageUrl: coverBook
   },
   {
     id: 2,
