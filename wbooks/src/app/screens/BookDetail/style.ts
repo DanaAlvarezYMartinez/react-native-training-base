@@ -10,7 +10,7 @@ const style = StyleSheet.create({
     display: 'flex',
     padding: DEFAULT_SPACE,
     alignItems: 'center',
-    paddingHorizontal: 15,
+    paddingHorizontal: DEFAULT_SPACE,
     backgroundColor: aliceBlue,
     height: '100%'
   },
@@ -21,8 +21,7 @@ const style = StyleSheet.create({
     paddingHorizontal: 15,
     backgroundColor: white,
     width: '95%',
-    borderRadius: 8,
-    marginVertical: 5
+    borderRadius: 8
   },
   container: {
     display: 'flex',
@@ -107,6 +106,9 @@ const style = StyleSheet.create({
   linkContainer: {
     marginTop: DEFAULT_SPACE,
     alignSelf: 'center'
+  },
+  viewLink: {
+    paddingBottom: 30
   }
 });
 

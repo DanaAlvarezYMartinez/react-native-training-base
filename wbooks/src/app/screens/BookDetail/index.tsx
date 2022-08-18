@@ -77,8 +77,8 @@ const BookDetail = ({ route }: Props) => {
 
       <ScrollView style={style.commentsContainer}>
         <CommentList comments={comments} />
-        <TouchableHighlight onPress={viewRest} underlayColor={'#ededed'} style={style.linkContainer}>
-          <View>
+        <TouchableHighlight onPress={viewRest} underlayColor={'none'} style={style.linkContainer}>
+          <View style={style.viewLink}>
             <Text style={style.viewAll}>{viewAll}</Text>
           </View>
         </TouchableHighlight>
