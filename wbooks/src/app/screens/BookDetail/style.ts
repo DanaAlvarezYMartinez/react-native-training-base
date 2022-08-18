@@ -101,6 +101,12 @@ const style = StyleSheet.create({
     width: '95%',
     borderRadius: 8,
     marginTop: 35
+  },
+  viewAll: {
+    color: btn
+  },
+  linkContainer: {
+    marginTop: DEFAULT_SPACE
   }
 });
 

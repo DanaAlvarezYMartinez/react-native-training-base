@@ -1,8 +1,9 @@
 import React from 'react';
-import { Image, Text, TouchableOpacity, View, ImageSourcePropType } from 'react-native';
+import { Image, Text, TouchableOpacity, View, ImageSourcePropType, Alert } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import Comment from '@app/components/Comment';
 import { COMMENTS_MOCK } from '@constants/mockComments';
+import { TouchableHighlight } from 'react-native-gesture-handler';
 
 import style from './style';
 
@@ -21,6 +22,10 @@ type BookDetailRouteProp = RouteProp<
 
 type Props = {
   route: BookDetailRouteProp;
+};
+
+const hola = () => {
+  Alert.alert('hola');
 };
 
 const BookDetail = ({ route }: Props) => {
@@ -59,6 +64,11 @@ const BookDetail = ({ route }: Props) => {
       <View style={style.commentsContainer}>
         <Comment name={comment.author} comment={comment.text} iconUrl={comment.url} />
         <Comment name={comment.author} comment={comment.text} iconUrl={comment.url} />
+        <TouchableHighlight onPress={hola} underlayColor={'#ededed'} style={style.linkContainer}>
+          <View>
+            <Text style={style.viewAll}>View All</Text>
+          </View>
+        </TouchableHighlight>
       </View>
     </View>
   );
