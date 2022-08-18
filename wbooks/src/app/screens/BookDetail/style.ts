@@ -98,7 +98,8 @@ const style = StyleSheet.create({
     backgroundColor: white,
     width: '95%',
     borderRadius: 8,
-    marginTop: 35
+    marginTop: 35,
+    overflow: 'scroll'
   },
   viewAll: {
     color: btn

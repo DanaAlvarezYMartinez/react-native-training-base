@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, Text, TouchableOpacity, View, ImageSourcePropType } from 'react-native';
+import { Image, Text, TouchableOpacity, View, ImageSourcePropType, ScrollView } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { COMMENTS_MOCK } from '@constants/mockComments';
 import { TouchableHighlight } from 'react-native-gesture-handler';
@@ -37,7 +37,11 @@ const BookDetail = ({ route }: Props) => {
     if (notLoaded) {
       setComments(comments.concat(restComments));
       setNotLoaded(false);
-      setViewAll('');
+      setViewAll('View Less');
+    } else {
+      setComments(defaultComments);
+      setNotLoaded(true);
+      setViewAll('View All');
     }
   };
 
@@ -71,14 +75,14 @@ const BookDetail = ({ route }: Props) => {
         </View>
       </View>
 
-      <View style={style.commentsContainer}>
+      <ScrollView style={style.commentsContainer}>
         <CommentList comments={comments} />
         <TouchableHighlight onPress={viewRest} underlayColor={'#ededed'} style={style.linkContainer}>
           <View>
             <Text style={style.viewAll}>{viewAll}</Text>
           </View>
         </TouchableHighlight>
-      </View>
+      </ScrollView>
     </View>
   );
 };

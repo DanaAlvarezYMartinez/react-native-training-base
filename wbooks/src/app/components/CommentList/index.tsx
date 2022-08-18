@@ -1,19 +1,12 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
 import { commentProps } from '@app/screens/BookDetail';
 
 import Comment from '../Comment';
 
-const renderItem = ({ item }: { item: commentProps }) => {
-  return <Comment id={item.id} author={item.author} text={item.text} url={item.url} />;
-};
-
 const CommentList = ({ comments }: any) => {
-  return (
-    <View>
-      <FlatList data={comments} renderItem={renderItem} keyExtractor={(item, index) => index.toString()} />
-    </View>
-  );
+  return comments.map((comment: commentProps) => (
+    <Comment key={comment.id} id={comment.id} author={comment.author} text={comment.text} url={comment.url} />
+  ));
 };
 
 export default CommentList;
