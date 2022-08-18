@@ -1,8 +1,18 @@
 import React from 'react';
 import { Image, Text, TouchableOpacity, View, ImageSourcePropType } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
+import Comment from '@app/components/Comment';
+import { COMMENTS_MOCK } from '@constants/mockComments';
 
 import style from './style';
+
+const comment = COMMENTS_MOCK[0];
+
+export type commentProps = {
+  name: string;
+  comment: string;
+  iconUrl: ImageSourcePropType;
+};
 
 type BookDetailRouteProp = RouteProp<
   { params: { author: string; title: string; imageUrl: ImageSourcePropType; year: string; genre: string } },
@@ -44,6 +54,11 @@ const BookDetail = ({ route }: Props) => {
             </TouchableOpacity>
           </View>
         </View>
+      </View>
+
+      <View style={style.commentsContainer}>
+        <Comment name={comment.author} comment={comment.text} iconUrl={comment.url} />
+        <Comment name={comment.author} comment={comment.text} iconUrl={comment.url} />
       </View>
     </View>
   );

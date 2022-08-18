@@ -91,6 +91,16 @@ const style = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     minWidth: '80%'
+  },
+  commentsContainer: {
+    display: 'flex',
+    paddingVertical: 15,
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    backgroundColor: white,
+    width: '95%',
+    borderRadius: 8,
+    marginTop: 35
   }
 });
 
