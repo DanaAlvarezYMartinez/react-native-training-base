@@ -94,9 +94,7 @@ const style = StyleSheet.create({
   },
   commentsContainer: {
     display: 'flex',
-    paddingVertical: 15,
-    alignItems: 'center',
-    paddingHorizontal: 15,
+    padding: DEFAULT_SPACE,
     backgroundColor: white,
     width: '95%',
     borderRadius: 8,
@@ -106,7 +104,8 @@ const style = StyleSheet.create({
     color: btn
   },
   linkContainer: {
-    marginTop: DEFAULT_SPACE
+    marginTop: DEFAULT_SPACE,
+    alignSelf: 'center'
   }
 });
 

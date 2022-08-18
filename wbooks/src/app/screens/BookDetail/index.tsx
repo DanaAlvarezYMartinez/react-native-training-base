@@ -1,18 +1,20 @@
-import React from 'react';
-import { Image, Text, TouchableOpacity, View, ImageSourcePropType, Alert } from 'react-native';
+import React, { useState } from 'react';
+import { Image, Text, TouchableOpacity, View, ImageSourcePropType } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
-import Comment from '@app/components/Comment';
 import { COMMENTS_MOCK } from '@constants/mockComments';
 import { TouchableHighlight } from 'react-native-gesture-handler';
+import CommentList from '@app/components/CommentList';
 
 import style from './style';
 
-const comment = COMMENTS_MOCK[0];
+const defaultComments = COMMENTS_MOCK.slice(0, 2);
+const restComments = COMMENTS_MOCK.slice(2, 5);
 
 export type commentProps = {
-  name: string;
-  comment: string;
-  iconUrl: ImageSourcePropType;
+  id?: number;
+  author: string;
+  text: string;
+  url: ImageSourcePropType;
 };
 
 type BookDetailRouteProp = RouteProp<
@@ -24,12 +26,20 @@ type Props = {
   route: BookDetailRouteProp;
 };
 
-const hola = () => {
-  Alert.alert('hola');
-};
-
 const BookDetail = ({ route }: Props) => {
   const { author, title, imageUrl, year, genre } = route.params;
+
+  const [comments, setComments] = useState(defaultComments);
+  const [notLoaded, setNotLoaded] = useState(true);
+  const [viewAll, setViewAll] = useState('View All');
+
+  const viewRest = () => {
+    if (notLoaded) {
+      setComments(comments.concat(restComments));
+      setNotLoaded(false);
+      setViewAll('');
+    }
+  };
 
   return (
     <View style={style.bookDetailContainer}>
@@ -62,11 +72,10 @@ const BookDetail = ({ route }: Props) => {
       </View>
 
       <View style={style.commentsContainer}>
-        <Comment name={comment.author} comment={comment.text} iconUrl={comment.url} />
-        <Comment name={comment.author} comment={comment.text} iconUrl={comment.url} />
-        <TouchableHighlight onPress={hola} underlayColor={'#ededed'} style={style.linkContainer}>
+        <CommentList comments={comments} />
+        <TouchableHighlight onPress={viewRest} underlayColor={'#ededed'} style={style.linkContainer}>
           <View>
-            <Text style={style.viewAll}>View All</Text>
+            <Text style={style.viewAll}>{viewAll}</Text>
           </View>
         </TouchableHighlight>
       </View>

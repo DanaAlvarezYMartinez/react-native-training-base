@@ -4,14 +4,14 @@ import { commentProps } from '@app/screens/BookDetail';
 
 import style from './style';
 
-const Comment = ({ name, comment, iconUrl }: commentProps) => {
+const Comment = ({ id, author, text, url }: commentProps) => {
   return (
-    <View style={style.commentContainer}>
-      <Image source={iconUrl} style={style.icomImg} />
+    <View style={style.commentContainer} nativeID={String(id)}>
+      <Image source={url} style={style.icomImg} />
       <View style={style.textContainer}>
-        <Text style={style.userName}>{name}</Text>
+        <Text style={style.userName}>{author}</Text>
         <View style={style.commentWrapper}>
-          <Text style={style.comment}>{comment}</Text>
+          <Text style={style.comment}>{text}</Text>
         </View>
       </View>
     </View>
