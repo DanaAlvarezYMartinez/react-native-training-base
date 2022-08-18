@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Image, Text, TouchableOpacity, View, ImageSourcePropType, ScrollView } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { COMMENTS_MOCK } from '@constants/mockComments';
-import { TouchableHighlight } from 'react-native-gesture-handler';
 import CommentList from '@app/components/CommentList';
 
 import style from './style';
@@ -77,11 +76,11 @@ const BookDetail = ({ route }: Props) => {
 
       <ScrollView style={style.commentsContainer}>
         <CommentList comments={comments} />
-        <TouchableHighlight onPress={viewRest} underlayColor={'none'} style={style.linkContainer}>
+        <TouchableOpacity onPress={() => viewRest()} style={style.linkContainer}>
           <View style={style.viewLink}>
             <Text style={style.viewAll}>{viewAll}</Text>
           </View>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );
