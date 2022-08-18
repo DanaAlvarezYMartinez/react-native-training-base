@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { aliceBlue, white, btn } from '@constants/colors';
+import { aliceBlue, white, btn, fontGray } from '@constants/colors';
+import { bookAuthorSize, bookAuthorWeight, bookDetailTitleSize, bookTitleWeight } from '@constants/fonts';
 
 const DEFAULT_SPACE = 15;
 const PADDING_BTN = 12;
@@ -25,7 +26,8 @@ const style = StyleSheet.create({
   },
   container: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: DEFAULT_SPACE
   },
   whiteBtn: {
     backgroundColor: white,
@@ -33,9 +35,9 @@ const style = StyleSheet.create({
     borderStyle: 'solid',
     borderWidth: 2,
     padding: PADDING_BTN,
-    minWidth: 275,
     borderRadius: 100,
-    marginVertical: 5
+    marginVertical: 5,
+    minWidth: '95%'
   },
   whiteBtnText: {
     color: btn,
@@ -50,7 +52,7 @@ const style = StyleSheet.create({
     padding: PADDING_BTN,
     borderRadius: 100,
     marginVertical: 5,
-    minWidth: 275
+    minWidth: '95%'
   },
   blueBtnText: {
     color: white,
@@ -59,11 +61,36 @@ const style = StyleSheet.create({
   },
   textContainer: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    marginLeft: DEFAULT_SPACE,
+    justifyContent: 'space-between'
   },
   infoContainer: {
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    paddingHorizontal: PADDING_BTN
+  },
+  img: {
+    height: 105,
+    width: 69
+  },
+  title: {
+    fontSize: bookDetailTitleSize,
+    color: fontGray,
+    fontWeight: bookTitleWeight,
+    flex: 1,
+    flexWrap: 'wrap'
+  },
+  text: {
+    fontSize: bookAuthorSize,
+    color: fontGray,
+    fontWeight: bookAuthorWeight
+  },
+  titleContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    minWidth: '80%'
   }
 });
 

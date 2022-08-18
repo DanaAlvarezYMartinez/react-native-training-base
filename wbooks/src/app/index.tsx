@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import { ImageSourcePropType } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Library from '@app/screens/Library';
@@ -18,14 +19,14 @@ import BookDetail from '@app/screens/BookDetail';
 export interface bookProps {
   author: string;
   title: string;
-  imageUrl?: any;
+  imageUrl?: ImageSourcePropType;
   year: string;
   genre: string;
 }
 
 export type RootStackParamList = {
   Library: undefined;
-  BookDetail: any;
+  BookDetail: { author: string; title: string; imageUrl: ImageSourcePropType; year: string; genre: string };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
