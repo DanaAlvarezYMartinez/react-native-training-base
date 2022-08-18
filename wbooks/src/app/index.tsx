@@ -10,24 +10,36 @@
  */
 
 import React from 'react';
-import { SafeAreaView, View } from 'react-native';
-import Book from '@app/components/Book';
-import { BOOKS_MOCK } from '@constants/mockBooks';
+import { ImageSourcePropType } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Library from '@app/screens/Library';
+import BookDetail from '@app/screens/BookDetail';
 
-import style from './style';
+export interface bookProps {
+  author: string;
+  title: string;
+  imageUrl: ImageSourcePropType;
+  year: string;
+  genre: string;
+}
 
-const book = BOOKS_MOCK[1];
+export type RootStackParamList = {
+  Library: undefined;
+  BookDetail: { author: string; title: string; imageUrl: ImageSourcePropType; year: string; genre: string };
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
     <>
-      <SafeAreaView>
-        <View style={style.sectionContainer}>
-          <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
-          <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
-          <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
-        </View>
-      </SafeAreaView>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Library" component={Library} />
+          <Stack.Screen name="BookDetail" component={BookDetail} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 };
