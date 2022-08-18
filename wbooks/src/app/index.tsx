@@ -19,7 +19,7 @@ import BookDetail from '@app/screens/BookDetail';
 export interface bookProps {
   author: string;
   title: string;
-  imageUrl?: ImageSourcePropType;
+  imageUrl: ImageSourcePropType;
   year: string;
   genre: string;
 }
