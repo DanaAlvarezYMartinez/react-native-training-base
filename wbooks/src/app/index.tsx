@@ -16,6 +16,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Library from '@app/screens/Library';
 import BookDetail from '@app/screens/BookDetail';
 
+import Header from './components/Header/Header';
+
 export interface bookProps {
   author: string;
   title: string;
@@ -36,8 +38,20 @@ const App = () => {
     <>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Library" component={Library} />
-          <Stack.Screen name="BookDetail" component={BookDetail} />
+          <Stack.Screen
+            name="Library"
+            component={Library}
+            options={{
+              header: () => <Header nameScreen="LIBRARY" backScreen="Library" />
+            }}
+          />
+          <Stack.Screen
+            name="BookDetail"
+            component={BookDetail}
+            options={{
+              header: () => <Header nameScreen="BOOK DETAIL" backScreen="Library" />
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

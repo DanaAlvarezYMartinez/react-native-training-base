@@ -6,7 +6,7 @@ import { RootStackParamList, bookProps } from '@app/index';
 
 import style from './style';
 
-export type BookDetailProp = NativeStackNavigationProp<RootStackParamList, 'BookDetail'>;
+type BookDetailProp = NativeStackNavigationProp<RootStackParamList, 'BookDetail'>;
 
 const Book = ({ author, title, imageUrl, year, genre }: bookProps) => {
   const navigation = useNavigation<BookDetailProp>();
