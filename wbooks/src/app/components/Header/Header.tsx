@@ -1,5 +1,6 @@
 import { View, Text, ImageBackground, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import background from '@assets/bc_nav_bar.png';
 import back from '@assets/ic_back.png';
 
@@ -13,7 +14,8 @@ export type headerProp = {
   backScreen: string;
 };
 
-const Header = ({ nameScreen, backScreen }: headerProp) => {
+const Header = ({ route }) => {
+  const navigation = useNavigation();
   // Mi idea es pasarle el nombre de la pantalla a la que quiero que vuelva,
   // entonces onPress hago el navigate y listo, queda andando
 
@@ -26,15 +28,17 @@ const Header = ({ nameScreen, backScreen }: headerProp) => {
   // const redirectNavigation = () =>
   //  navigation.navigate({backScreen});
 
-  const redirectNavigation = () => console.log('backScreen', backScreen);
+  const handlePressGoBack = () => navigation.goBack();
 
   return (
     <ImageBackground source={background} resizeMode="cover" style={style.background}>
       <View style={style.container}>
-        <TouchableOpacity onPress={redirectNavigation}>
-          <Image source={back} />
-        </TouchableOpacity>
-        <Text style={style.title}>{nameScreen}</Text>
+        {route.name !== 'Library' && (
+          <TouchableOpacity onPress={handlePressGoBack}>
+            <Image source={back} />
+          </TouchableOpacity>
+        )}
+        <Text style={style.title}>{'nameScreen'}</Text>
       </View>
     </ImageBackground>
   );

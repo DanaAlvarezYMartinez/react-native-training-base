@@ -42,14 +42,14 @@ const App = () => {
             name="Library"
             component={Library}
             options={{
-              header: () => <Header nameScreen="LIBRARY" backScreen="Library" />
+              header: props => <Header {...props} />
             }}
           />
           <Stack.Screen
             name="BookDetail"
             component={BookDetail}
             options={{
-              header: () => <Header nameScreen="BOOK DETAIL" backScreen="Library" />
+              header: props => <Header {...props} />
             }}
           />
         </Stack.Navigator>
