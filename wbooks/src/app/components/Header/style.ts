@@ -13,7 +13,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 20,
-    width: '60%',
+    width: '55%',
     justifyContent: 'space-between',
     marginLeft: '5%'
   },
@@ -21,6 +21,13 @@ const style = StyleSheet.create({
     color: white,
     fontWeight: 'bold',
     fontSize: 17
+  },
+  libraryContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: 20,
+    width: '100%',
+    justifyContent: 'center'
   }
 });
 
