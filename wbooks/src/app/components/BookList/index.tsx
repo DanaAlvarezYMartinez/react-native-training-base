@@ -2,7 +2,7 @@ import React from 'react';
 import { View, FlatList } from 'react-native';
 import { BOOKS_MOCK } from '@constants/mockBooks';
 import Book from '@app/components/Book';
-import { bookProps } from '@app/index';
+import { bookProps } from '@app/components/AppNavigator';
 
 import style from './style';
 

@@ -10,11 +10,8 @@
  */
 
 import React from 'react';
-import { Image, ImageSourcePropType, Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Library from '@app/screens/Library';
-import BookDetail from '@app/screens/BookDetail';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import settingsIcon from '@assets/ic_settings.png';
 import settingsIconActive from '@assets/ic_settings_active.png';
@@ -22,49 +19,18 @@ import libraryIcon from '@assets/ic_library.png';
 import libraryIconActive from '@assets/ic_library_active.png';
 import { btn, iconGray } from '@constants/colors';
 
-import Header from './components/Header/Header';
+import AppNavigator from './components/AppNavigator';
 
-export interface bookProps {
-  author: string;
-  title: string;
-  imageUrl: ImageSourcePropType;
-  year: string;
-  genre: string;
-}
-
-export type RootStackParamList = {
-  Library: undefined;
-  BookDetail: { author: string; title: string; imageUrl: ImageSourcePropType; year: string; genre: string };
-};
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
 
 const LibraryTab = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Library"
-        component={Library}
-        options={{
-          header: props => <Header {...props} />
-        }}
-      />
-      <Stack.Screen
-        name="BookDetail"
-        component={BookDetail}
-        options={{
-          header: props => <Header {...props} />
-        }}
-      />
-    </Stack.Navigator>
-  );
+  return <AppNavigator />;
 };
 
 const SettingsTab = () => {
   return (
     <View>
-      <Text>Holi, settings screen!</Text>
+      <Text>Hi, settings screen :) </Text>
     </View>
   );
 };
