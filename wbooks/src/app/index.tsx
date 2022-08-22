@@ -10,11 +10,12 @@
  */
 
 import React from 'react';
-import { ImageSourcePropType } from 'react-native';
+import { ImageSourcePropType, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Library from '@app/screens/Library';
 import BookDetail from '@app/screens/BookDetail';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Header from './components/Header/Header';
 
@@ -32,27 +33,58 @@ export type RootStackParamList = {
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
+const Tab = createBottomTabNavigator();
+
+const LibraryTab = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Library"
+        component={Library}
+        options={{
+          header: props => <Header {...props} />
+        }}
+      />
+      <Stack.Screen
+        name="BookDetail"
+        component={BookDetail}
+        options={{
+          header: props => <Header {...props} />
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const SettingsTab = () => {
+  return (
+    <View>
+      <Text>Holi, settings screen!</Text>
+    </View>
+  );
+};
 
 const App = () => {
   return (
     <>
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Library"
-            component={Library}
+        <Tab.Navigator>
+          <Tab.Screen
+            name="LibraryTab"
+            component={LibraryTab}
             options={{
-              header: props => <Header {...props} />
+              headerShown: false,
+              title: 'Library'
             }}
           />
-          <Stack.Screen
-            name="BookDetail"
-            component={BookDetail}
+          <Tab.Screen
+            name="SettingsTab"
+            component={SettingsTab}
             options={{
-              header: props => <Header {...props} />
+              title: 'Settings'
             }}
           />
-        </Stack.Navigator>
+        </Tab.Navigator>
       </NavigationContainer>
     </>
   );
