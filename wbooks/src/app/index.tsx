@@ -10,12 +10,17 @@
  */
 
 import React from 'react';
-import { ImageSourcePropType, Text, View } from 'react-native';
+import { Image, ImageSourcePropType, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Library from '@app/screens/Library';
 import BookDetail from '@app/screens/BookDetail';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import settingsIcon from '@assets/ic_settings.png';
+import settingsIconActive from '@assets/ic_settings_active.png';
+import libraryIcon from '@assets/ic_library.png';
+import libraryIconActive from '@assets/ic_library_active.png';
+import { btn, iconGray } from '@constants/colors';
 
 import Header from './components/Header/Header';
 
@@ -68,7 +73,23 @@ const App = () => {
   return (
     <>
       <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused }) => {
+              let icon = null;
+
+              if (route.name === 'LibraryTab') {
+                icon = focused ? libraryIconActive : libraryIcon;
+              } else if (route.name === 'SettingsTab') {
+                icon = focused ? settingsIconActive : settingsIcon;
+              }
+
+              // You can return any component that you like here!
+              return <Image source={icon} />;
+            },
+            tabBarActiveTintColor: btn,
+            tabBarInactiveTintColor: iconGray
+          })}>
           <Tab.Screen
             name="LibraryTab"
             component={LibraryTab}
