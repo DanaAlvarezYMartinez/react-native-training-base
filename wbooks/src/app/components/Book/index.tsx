@@ -3,13 +3,13 @@ import { View, Text, Image, ImageSourcePropType } from 'react-native';
 
 import style from './style';
 
-interface Props {
+export type Props = {
   author: string;
   title: string;
   imageUrl: ImageSourcePropType;
-}
+};
 
-const Book: React.FC<Props> = ({ author, title, imageUrl }) => {
+const Book = ({ author, title, imageUrl }: Props) => {
   return (
     <View style={style.bookContainer}>
       <Image source={imageUrl} style={style.img} />

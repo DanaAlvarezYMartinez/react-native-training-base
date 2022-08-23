@@ -10,23 +10,15 @@
  */
 
 import React from 'react';
-import { SafeAreaView, View } from 'react-native';
-import Book from '@app/components/Book';
-import { BOOKS_MOCK } from '@constants/mockBooks';
+import { SafeAreaView } from 'react-native';
 
-import style from './style';
-
-const book = BOOKS_MOCK[1];
+import Library from './screens/Library';
 
 const App = () => {
   return (
     <>
       <SafeAreaView>
-        <View style={style.sectionContainer}>
-          <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
-          <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
-          <Book author={book.author} title={book.title} imageUrl={book.imageUrl} />
-        </View>
+        <Library />
       </SafeAreaView>
     </>
   );
