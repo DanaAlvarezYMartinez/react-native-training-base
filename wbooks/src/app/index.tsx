@@ -18,6 +18,7 @@ import settingsIconActive from '@assets/ic_settings_active.png';
 import libraryIcon from '@assets/ic_library.png';
 import libraryIconActive from '@assets/ic_library_active.png';
 import { btn, iconGray } from '@constants/colors';
+import Config from 'react-native-config';
 
 import AppNavigator from './components/AppNavigator';
 
@@ -30,7 +31,7 @@ const LibraryTab = () => {
 const SettingsTab = () => {
   return (
     <View>
-      <Text>Hi, settings screen :) </Text>
+      <Text>Hi {Config.GOOGLE_MAPS_API_KEY}, settings screen :) </Text>
     </View>
   );
 };
