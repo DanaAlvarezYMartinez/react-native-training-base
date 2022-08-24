@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Image, Text, TouchableOpacity, View, ImageSourcePropType, ScrollView } from 'react-native';
-import { RouteProp } from '@react-navigation/native';
 import { COMMENTS_MOCK } from '@constants/mockComments';
 import CommentList from '@app/components/CommentList';
 
@@ -16,16 +15,7 @@ export type commentProps = {
   url: ImageSourcePropType;
 };
 
-type BookDetailRouteProp = RouteProp<
-  { params: { author: string; title: string; imageUrl: ImageSourcePropType; year: string; genre: string } },
-  'params'
->;
-
-type Props = {
-  route: BookDetailRouteProp;
-};
-
-const BookDetail = ({ route }: Props) => {
+const BookDetail = ({ route }: any) => {
   const { author, title, imageUrl, year, genre } = route.params;
 
   const [comments, setComments] = useState(defaultComments);
