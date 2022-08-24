@@ -3,3 +3,7 @@ export const bookDetailTitleSize = 24;
 export const bookTitleWeight = '700';
 export const bookAuthorSize = 15;
 export const bookAuthorWeight = '400';
+export const commentUserNameSize = 15;
+export const commentUserNameWeight = '700';
+export const commentSize = 15;
+export const commentWeight = '400';
