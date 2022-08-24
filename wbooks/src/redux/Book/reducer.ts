@@ -7,12 +7,16 @@ interface Action {
   data: any;
 }
 
-export function books(state = initialState, action: Action) {
+function reducerBook(state = initialState, action: Action) {
   switch (action.type) {
     case 'GET_BOOKS':
-      return action.data;
+      return {
+        bookList: action.data
+      };
 
     default:
       return state;
   }
 }
+
+export default reducerBook;

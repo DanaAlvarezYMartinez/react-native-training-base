@@ -14,6 +14,8 @@ import { ImageSourcePropType } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Library from '@app/screens/Library';
 import BookDetail from '@app/screens/BookDetail';
+import { Provider } from 'react-redux';
+import { store } from '@redux/store';
 
 import Header from '../Header/Header';
 
@@ -34,22 +36,24 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const AppNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Library"
-        component={Library}
-        options={{
-          header: props => <Header {...props} />
-        }}
-      />
-      <Stack.Screen
-        name="BookDetail"
-        component={BookDetail}
-        options={{
-          header: props => <Header {...props} />
-        }}
-      />
-    </Stack.Navigator>
+    <Provider store={store}>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Library"
+          component={Library}
+          options={{
+            header: props => <Header {...props} />
+          }}
+        />
+        <Stack.Screen
+          name="BookDetail"
+          component={BookDetail}
+          options={{
+            header: props => <Header {...props} />
+          }}
+        />
+      </Stack.Navigator>
+    </Provider>
   );
 };
 
