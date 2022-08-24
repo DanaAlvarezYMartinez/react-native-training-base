@@ -15,8 +15,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Library from '@app/screens/Library';
 import BookDetail from '@app/screens/BookDetail';
 import { Provider } from 'react-redux';
-import { store } from '@redux/store';
 
+import { store } from '../../../redux/store';
 import Header from '../Header/Header';
 
 export interface bookProps {

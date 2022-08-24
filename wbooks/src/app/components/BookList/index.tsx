@@ -3,7 +3,8 @@ import { View, FlatList } from 'react-native';
 import Book from '@app/components/Book';
 import { bookProps } from '@app/components/AppNavigator';
 import { useSelector } from 'react-redux';
-import type { RootState } from '@redux/store';
+
+import type { RootState } from '../../../redux/store';
 
 import style from './style';
 
