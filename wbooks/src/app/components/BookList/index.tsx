@@ -4,7 +4,7 @@ import Book from '@app/components/Book';
 import { bookProps } from '@app/components/AppNavigator';
 import { useSelector } from 'react-redux';
 
-import type { RootState } from '../../../redux/store';
+import { State } from '../../../interfaces/state';
 
 import style from './style';
 
@@ -21,7 +21,7 @@ const BookList = () => {
     );
   };
 
-  const books = useSelector<RootState, any>(state => state.bookList);
+  const books = useSelector((state: State) => state.book.bookList);
 
   return (
     <View style={style.bookListContainer}>

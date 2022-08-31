@@ -1,7 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import { fetchMiddleware } from 'redux-recompose';
 
 import reducerBook from './Book/reducer';
 
-export const store = configureStore({ reducer: reducerBook });
+const reducer = combineReducers({ reducerBook });
 
-export type RootState = ReturnType<typeof store.getState>;
+export const store = configureStore({
+  reducer,
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(fetchMiddleware).concat(thunk)
+});

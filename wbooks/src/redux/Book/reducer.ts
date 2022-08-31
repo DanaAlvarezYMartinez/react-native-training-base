@@ -1,22 +1,16 @@
-const initialState = {
+import { completeState, createReducer, completeReducer } from 'redux-recompose';
+
+import { actions } from './actions';
+
+const stateDescription = {
   bookList: []
 };
 
-interface Action {
-  type: string;
-  data: any;
-}
+const initialState = completeState(stateDescription);
 
-function reducerBook(state = initialState, action: Action) {
-  switch (action.type) {
-    case 'GET_BOOKS':
-      return {
-        bookList: action.data
-      };
+const reducerDescription = {
+  primaryActions: [actions.GET_BOOKS],
+  override: {}
+};
 
-    default:
-      return state;
-  }
-}
-
-export default reducerBook;
+export default createReducer(initialState, completeReducer(reducerDescription));
